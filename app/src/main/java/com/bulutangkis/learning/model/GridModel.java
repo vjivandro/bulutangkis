@@ -1,37 +1,27 @@
-package com.bulutangkis.learning;
+package com.bulutangkis.learning.model;
 
 public class GridModel {
-    public String tesxt;
-    public int image;
-    public String color;
+    public String TextLabel;
+    public int Gambar;
 
-    public GridModel(String tesxt, int image, String color) {
-        this.tesxt = tesxt;
-        this.image = image;
-        this.color = color;
+    public GridModel(String textLabel, int gambar) {
+        TextLabel = textLabel;
+        Gambar = gambar;
     }
 
-    public String getTesxt() {
-        return tesxt;
+    public String getTextLabel() {
+        return TextLabel;
     }
 
-    public void setTesxt(String tesxt) {
-        this.tesxt = tesxt;
+    public void setTextLabel(String textLabel) {
+        TextLabel = textLabel;
     }
 
-    public int getImage() {
-        return image;
+    public int getGambar() {
+        return Gambar;
     }
 
-    public void setImage(int image) {
-        this.image = image;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+    public void setGambar(int gambar) {
+        Gambar = gambar;
     }
 }
