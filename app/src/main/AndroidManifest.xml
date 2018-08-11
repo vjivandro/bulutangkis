@@ -12,7 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,7 +47,14 @@
             android:name=".materi.TeknikServiceBulutangkis"
             android:label="Teknik Servis dan Pukulan Bulutangkis"
             android:parentActivityName=".MateriActivity" />
-        <activity android:name=".ProfileActivity"></activity>
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profil Apliksi"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".kuis.KuisActivity"
+            android:label="Test Badminton"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

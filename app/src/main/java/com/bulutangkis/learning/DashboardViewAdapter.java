@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bulutangkis.learning.kuis.KuisActivity;
 import com.bulutangkis.learning.model.DashBoardModel;
 
 import java.util.List;
@@ -60,6 +62,10 @@ public class DashboardViewAdapter extends RecyclerView.Adapter<DashboardViewAdap
                 v.getContext().startActivity(new Intent(v.getContext(), MateriActivity.class));
             } else if (getPosition() == 1) {
                 v.getContext().startActivity(new Intent(v.getContext(), VideoActivity.class));
+            }else if (getPosition() == 2) {
+                v.getContext().startActivity(new Intent(v.getContext(), KuisActivity.class));
+            }else if (getPosition() == 3) {
+                v.getContext().startActivity(new Intent(v.getContext(), ProfileActivity.class));
             }
         }
     }

@@ -66,7 +66,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_person_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/Applications/Android%20Studio.app/Contents/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_timer_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -76,9 +76,12 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="color" value="f9f9f9" />
-                            <entry key="outputName" value="ic_person" />
+                            <entry key="color" value="f91207" />
+                            <entry key="height" value="50" />
+                            <entry key="outputName" value="ic_timer_red" />
+                            <entry key="overrideSize" value="true" />
                             <entry key="sourceFile" value="$USER_HOME$" />
+                            <entry key="width" value="50" />
                           </map>
                         </option>
                       </PersistentState>
