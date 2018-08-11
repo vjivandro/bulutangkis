@@ -10,6 +10,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:background="@drawable/edittextrounded"
+        android:layout_margin="20dp"
         android:ems="10"
         android:hint="Nama lengkap"
         android:inputType="textPersonName" >
@@ -24,7 +26,10 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextNama"
-        android:layout_marginTop="21dp"
-        android:text="OK"/>
+        android:layout_margin="20dp"
+        android:background="@drawable/roundedbutton"
+        android:textColor="@color/colorAccent"
+        android:text="Lanjut"
+        android:textStyle="bold"/>
 
 </RelativeLayout>

@@ -4,16 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <include layout="@layout/content_kuis" />
-    </LinearLayout>
+    android:layout_height="wrap_content">
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab_prev"
@@ -22,15 +13,14 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/ic_keyboard_arrow_left"
         app:backgroundTint="@color/colorPrimaryDark"
+        android:src="@drawable/ic_keyboard_arrow_left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
         tools:ignore="MissingConstraints" />
 
     <android.support.design.widget.FloatingActionButton
@@ -45,13 +35,12 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/ic_keyboard_arrow_right"
         app:backgroundTint="@color/colorPrimaryDark"
+        android:src="@drawable/ic_keyboard_arrow_right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fab_done"
         app:layout_constraintStart_toEndOf="@+id/fab_prev"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
         tools:ignore="MissingConstraints" />
 
     <android.support.design.widget.FloatingActionButton
@@ -61,14 +50,14 @@
         android:layout_gravity="end|bottom"
         android:layout_margin="16dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/ic_check"
         app:backgroundTint="@color/colorPrimaryDark"
+        android:src="@drawable/ic_check"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
         tools:ignore="MissingConstraints" />
+
 </android.support.constraint.ConstraintLayout>

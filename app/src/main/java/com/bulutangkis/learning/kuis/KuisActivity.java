@@ -2,10 +2,12 @@ package com.bulutangkis.learning.kuis;
 
 import android.content.DialogInterface;
 import android.os.CountDownTimer;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +37,7 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
     private List<KuisModel> listKuis;
     private CounterClass mCountDownTimer;
     private int detik = 300000;  // 1 menit = 1000 s
-    private Button btnPrev, btnNext, btnSelesai;
+    private FloatingActionButton fab_prev, fab_next, fab_done;
     int jawabanYgDiPilih[] = null;
     int jawabanYgBenar[] = null;
     boolean cekPertanyaan = false;
@@ -58,9 +60,17 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
         rb_b = (RadioButton) findViewById(R.id.radio1);
         rb_c = (RadioButton) findViewById(R.id.radio2);
         rb_d = (RadioButton) findViewById(R.id.radio3);
-        btnPrev = (Button) findViewById(R.id.buttonPrev);
-        btnNext = (Button) findViewById(R.id.buttonNext);
-        btnSelesai = (Button) findViewById(R.id.buttonSelesai);
+
+        fab_prev = findViewById(R.id.fab_prev);
+        fab_prev.getRippleColor();
+        fab_next = findViewById(R.id.fab_next);
+        fab_next.getRippleColor();
+        fab_done = findViewById(R.id.fab_done);
+        fab_done.getRippleColor();
+
+        fab_prev.setOnClickListener(this);
+        fab_next.setOnClickListener(this);
+        fab_done.setOnClickListener(this);
 
         final Calendar c = Calendar.getInstance();
         int day = c.get(Calendar.DAY_OF_MONTH);
@@ -71,10 +81,6 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
         listKuis = new ArrayList<KuisModel>();
         listKuis = db.getKuis();
 
-        btnSelesai.setOnClickListener(this);
-        btnPrev.setOnClickListener(this);
-        btnNext.setOnClickListener(this);
-        //new getSoalWasit().execute();
         jawabanYgDiPilih = new int[listKuis.size()];
         java.util.Arrays.fill(jawabanYgDiPilih, -2);
         jawabanYgBenar = new int[listKuis.size()];
@@ -132,7 +138,7 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void tunjukanPertanyaan(int urutan_soal_soal, boolean review) {
-        btnSelesai.setEnabled(false);
+        fab_done.setEnabled(false);
         try {
             radioGroup.clearCheck();
             KuisModel kuisModel = new KuisModel();
@@ -170,18 +176,18 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
             pasangLabelDanNomorUrut();
 
             if (urutan_soal_soal == (listKuis.size() - 1)){
-                btnNext.setEnabled(false);
-                btnSelesai.setEnabled(true);
+                fab_next.setEnabled(false);
+                fab_done.setEnabled(true);
             }
 
             if (urutan_soal_soal == 0)
-                btnPrev.setEnabled(false);
+                fab_prev.setEnabled(false);
 
             if (urutan_soal_soal > 0)
-                btnPrev.setEnabled(true);
+                fab_prev.setEnabled(true);
 
             if (urutan_soal_soal < (listKuis.size() - 1))
-                btnNext.setEnabled(true);
+                fab_next.setEnabled(true);
 
         } catch (Exception e) {
             Log.e(this.getClass().toString(), e.getMessage(), e.getCause());
@@ -193,13 +199,13 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
         int id = v.getId();
 
         switch (id) {
-            case R.id.buttonPrev:
+            case R.id.fab_prev:
                 actionPrev();
                 break;
-            case R.id.buttonNext:
+            case R.id.fab_next:
                 actionNext();
                 break;
-            case R.id.buttonSelesai:
+            case R.id.fab_done:
                 actionDone();
                 break;
         }
@@ -352,4 +358,19 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
                 + listKuis.size());
     }
 
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+        Toast.makeText(getApplicationContext(), "Selesaikan test hingga selesai", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            super.onKeyDown(keyCode, event);
+            return true;
+        }
+        return false;
+    }
 }
