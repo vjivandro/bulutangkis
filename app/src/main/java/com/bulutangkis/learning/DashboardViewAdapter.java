@@ -8,18 +8,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.bulutangkis.learning.model.GridModel;
+import com.bulutangkis.learning.model.DashBoardModel;
 
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+public class DashboardViewAdapter extends RecyclerView.Adapter<DashboardViewAdapter.ViewHolder>{
 
-    private List<GridModel> itemList;
+    private List<DashBoardModel> itemList;
     private Context context;
 
-    public RecyclerViewAdapter(Context context, List<GridModel> itemList) {
+    public DashboardViewAdapter(Context context, List<DashBoardModel> itemList) {
         this.itemList = itemList;
         this.context = context;
     }
@@ -49,8 +48,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public ViewHolder(View itemView) {
             super(itemView);
 
-            labelTv = (TextView) itemView.findViewById(R.id.country_name);
-            imageView = (ImageView) itemView.findViewById(R.id.country_photo);
+            labelTv = (TextView) itemView.findViewById(R.id.textView);
+            imageView = (ImageView) itemView.findViewById(R.id.imageView);
 
             itemView.setOnClickListener(this);
         }
@@ -59,10 +58,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public void onClick(View v) {
             if (getPosition() == 0) {
                 v.getContext().startActivity(new Intent(v.getContext(), MateriActivity.class));
-                Toast.makeText(v.getContext(), "Materi", Toast.LENGTH_SHORT).show();
             } else if (getPosition() == 1) {
                 v.getContext().startActivity(new Intent(v.getContext(), VideoActivity.class));
-                Toast.makeText(v.getContext(), "Video Tutorial", Toast.LENGTH_SHORT).show();
             }
         }
     }

@@ -1,10 +1,10 @@
 package com.bulutangkis.learning.model;
 
-public class GridModel {
+public class DashBoardModel {
     public String TextLabel;
     public int Gambar;
 
-    public GridModel(String textLabel, int gambar) {
+    public DashBoardModel(String textLabel, int gambar) {
         TextLabel = textLabel;
         Gambar = gambar;
     }

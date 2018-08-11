@@ -12,7 +12,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,7 +26,28 @@
         <activity
             android:name=".VideoActivity"
             android:label="Video Tutorial"
-            android:parentActivityName=".VideoActivity"/>
+            android:parentActivityName=".VideoActivity" />
+        <activity
+            android:name=".materi.PeraturanBulutangkis"
+            android:label="Peraturan Bulutangkis"
+            android:parentActivityName=".MateriActivity" />
+        <activity
+            android:name=".materi.PerwasitanBulutangkis"
+            android:label="Perwasitan Bulutangkis"
+            android:parentActivityName=".MateriActivity" />
+        <activity
+            android:name=".materi.SejarahBulutangkis"
+            android:label="Sejarah Bulutangkis"
+            android:parentActivityName=".MateriActivity" />
+        <activity
+            android:name=".materi.StrategiBulutangkis"
+            android:label="Strategi dan Taktik Bulutangkis"
+            android:parentActivityName=".MateriActivity" />
+        <activity
+            android:name=".materi.TeknikServiceBulutangkis"
+            android:label="Teknik Servis dan Pukulan Bulutangkis"
+            android:parentActivityName=".MateriActivity" />
+        <activity android:name=".ProfileActivity"></activity>
     </application>
 
 </manifest>

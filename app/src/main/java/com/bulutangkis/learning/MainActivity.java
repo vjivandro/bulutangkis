@@ -1,44 +1,54 @@
 package com.bulutangkis.learning;
 
+import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
-import com.bulutangkis.learning.model.GridModel;
+import com.bulutangkis.learning.model.DashBoardModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private LinearLayoutManager lLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
-        List<GridModel> rowListItem = getAllItemList();
-        lLayout = new LinearLayoutManager(MainActivity.this);
+        List<DashBoardModel> rowListItem = getAllItemList();
 
         RecyclerView rView = (RecyclerView)findViewById(R.id.recyclerview);
-        rView.setLayoutManager(lLayout);
 
-        RecyclerViewAdapter rcAdapter = new RecyclerViewAdapter(MainActivity.this, rowListItem);
+        DashboardViewAdapter rcAdapter = new DashboardViewAdapter(MainActivity.this, rowListItem);
         rView.setAdapter(rcAdapter);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
+                LinearLayoutManager.HORIZONTAL, false);
+
+        GridLayoutManager manager = new GridLayoutManager(this, 2,
+                GridLayoutManager.VERTICAL, false);
+        rView.setLayoutManager(manager);
+        rView.addItemDecoration(new ItemDecorationColumns(2, 2));
 
     }
 
-    private List<GridModel> getAllItemList(){
+    private List<DashBoardModel> getAllItemList(){
 
-        List<GridModel> allItems = new ArrayList<GridModel>();
-        allItems.add(new GridModel("Materi", R.drawable.materi));
-        allItems.add(new GridModel("Video Tutorial", R.drawable.video));
+        List<DashBoardModel> allItems = new ArrayList<DashBoardModel>();
+        allItems.add(new DashBoardModel("Materi", R.drawable.ic_materi));
+        allItems.add(new DashBoardModel("Video Tutorial", R.drawable.ic_video));
+        allItems.add(new DashBoardModel("Test", R.drawable.ic_test));
+        allItems.add(new DashBoardModel("about", R.drawable.ic_about));
 
         return allItems;
     }
@@ -59,8 +69,58 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, ProfileActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private class ItemDecorationColumns extends RecyclerView.ItemDecoration {
+        private int mSizeGridSpacingPx;
+        private int mGridSize;
+        private boolean mNeedLeftSpacing = false;
+
+        public ItemDecorationColumns(int gridSpacingPx, int gridSize) {
+            mSizeGridSpacingPx = gridSpacingPx;
+            mGridSize = gridSize;
+        }
+
+        @Override
+        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+            int frameWidth = (int) ((parent.getWidth() - (float) mSizeGridSpacingPx * (mGridSize - 1)) / mGridSize);
+            int padding = parent.getWidth() / mGridSize - frameWidth;
+            int itemPosition = ((RecyclerView.LayoutParams) view.getLayoutParams()).getViewAdapterPosition();
+            if (itemPosition < mGridSize) {
+                outRect.top = 0;
+            } else {
+                outRect.top = mSizeGridSpacingPx;
+            }
+            if (itemPosition % mGridSize == 0) {
+                outRect.left = 0;
+                outRect.right = padding;
+                mNeedLeftSpacing = true;
+            } else if ((itemPosition + 1) % mGridSize == 0) {
+                mNeedLeftSpacing = false;
+                outRect.right = 0;
+                outRect.left = padding;
+            } else if (mNeedLeftSpacing) {
+                mNeedLeftSpacing = false;
+                outRect.left = mSizeGridSpacingPx - padding;
+                if ((itemPosition + 2) % mGridSize == 0) {
+                    outRect.right = mSizeGridSpacingPx - padding;
+                } else {
+                    outRect.right = mSizeGridSpacingPx / 2;
+                }
+            } else if ((itemPosition + 2) % mGridSize == 0) {
+                mNeedLeftSpacing = false;
+                outRect.left = mSizeGridSpacingPx / 2;
+                outRect.right = mSizeGridSpacingPx - padding;
+            } else {
+                mNeedLeftSpacing = false;
+                outRect.left = mSizeGridSpacingPx / 2;
+                outRect.right = mSizeGridSpacingPx / 2;
+            }
+            outRect.bottom = 0;
+        }
     }
 }
