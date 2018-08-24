@@ -1,20 +1,20 @@
 package com.bulutangkis.learning.model;
 
 public class ProfilModel {
-    String key;
+    int photo;
     String value;
 
-    public ProfilModel(String key, String value) {
-        this.key = key;
+    public ProfilModel(int photo, String value) {
+        this.photo = photo;
         this.value = value;
     }
 
-    public String getKey() {
-        return key;
+    public int getPhoto() {
+        return photo;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setPhoto(int photo) {
+        this.photo = photo;
     }
 
     public String getValue() {

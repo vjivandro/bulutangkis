@@ -5,12 +5,12 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.bulutangkis.learning.about.ProfileActivity;
 import com.bulutangkis.learning.model.DashBoardModel;
 
 import java.util.ArrayList;
@@ -32,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         DashboardViewAdapter rcAdapter = new DashboardViewAdapter(MainActivity.this, rowListItem);
         rView.setAdapter(rcAdapter);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
-                LinearLayoutManager.HORIZONTAL, false);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
+//                LinearLayoutManager.HORIZONTAL, false);
 
         GridLayoutManager manager = new GridLayoutManager(this, 2,
                 GridLayoutManager.VERTICAL, false);

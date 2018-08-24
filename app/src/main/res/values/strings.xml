@@ -4,4 +4,6 @@
         "Material is the metaphor.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="rule_title">PETUNJUK Test :</string>
+    <string name="rule_test">Tes obyeltif terdiri dari 50 butir soal pilihan ganda.\nSetiap butir soal terdiri dari 4 alternatif jawaban.\nPilihlah satu alternatif jawaban yang Anda anggap paling benar dari 4 alternatif jawaban dengan cara check alternatif pilihan jawaban.\nAnda diberi kesempatan kembali ke halaman sebelumnya jika ingin memperbaiki jawaban pada soal sebelumnya.\nWaktu mengerjakan soal 90 menit.</string>
 </resources>

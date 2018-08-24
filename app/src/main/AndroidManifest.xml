@@ -48,13 +48,27 @@
             android:label="Teknik Servis dan Pukulan Bulutangkis"
             android:parentActivityName=".MateriActivity" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".about.ProfileActivity"
             android:label="Profil Apliksi"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".kuis.KuisActivity"
-            android:label="Test Badminton"
-            android:parentActivityName=".MainActivity"/>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".kuis.PrepareKuisActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".about.IdentitasActivity"
+            android:label="Identitas"
+            android:parentActivityName=".about.ProfileActivity" />
+        <activity
+            android:name=".about.PendidikanActivity"
+            android:label="Pendidikan"
+            android:parentActivityName=".about.ProfileActivity" />
+        <activity
+            android:name=".about.RiwayatPekerjaanActivity"
+            android:label="Riwayat Pekerjaan"
+            android:parentActivityName=".about.ProfileActivity"/>
     </application>
 
 </manifest>

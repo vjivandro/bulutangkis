@@ -1,6 +1,8 @@
 package com.bulutangkis.learning.kuis;
 
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -36,18 +38,21 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
     private RadioButton rb_a, rb_b, rb_c, rb_d;
     private List<KuisModel> listKuis;
     private CounterClass mCountDownTimer;
-    private int detik = 300000;  // 1 menit = 1000 s
+    private int detik = 5400000;  // 1 menit = 1000 s
     private FloatingActionButton fab_prev, fab_next, fab_done;
     int jawabanYgDiPilih[] = null;
     int jawabanYgBenar[] = null;
     boolean cekPertanyaan = false;
     int urutanPertanyaan = 0;
-    String noSalah = "";
+    private SharedPreferences sharedPreferences;
+    private String noSalah = "";
+    private String nilai, index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kuis);
+        sharedPreferences = getSharedPreferences("my_shared_preferences", Context.MODE_PRIVATE);
 
         db = new DatabaseHelper(this);
         txtnama = (TextView) findViewById(R.id.textViewNama);
@@ -151,10 +156,10 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
 
             txtsoal.setText(pertanyaan.toCharArray(), 0, pertanyaan.length());
             radioGroup.check(-1);
-            String jwb_a = kuisModel.getPil_a();
-            String jwb_b = kuisModel.getPil_b();
-            String jwb_c = kuisModel.getPil_c();
-            String jwb_d = kuisModel.getPil_d();
+            String jwb_a = "A. " + kuisModel.getPil_a();
+            String jwb_b = "B. " + kuisModel.getPil_b();
+            String jwb_c = "C. " + kuisModel.getPil_c();
+            String jwb_d = "D. " + kuisModel.getPil_d();
 
             // mengisis radio button dengan pilihan jawaban
             rb_a.setText(jwb_a.toCharArray(), 0, jwb_a.length());
@@ -164,6 +169,7 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
 
 
             Log.d("", jawabanYgDiPilih[urutan_soal_soal] + "");
+
             if (jawabanYgDiPilih[urutan_soal_soal] == 0)
                 radioGroup.check(R.id.radio0);
             if (jawabanYgDiPilih[urutan_soal_soal] == 1)
@@ -249,16 +255,40 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
         tampilKotakAlert = new AlertDialog.Builder(KuisActivity.this).create();
         tampilKotakAlert.setTitle("Hasil");
         int hasil = jumlahJawabanYgBenar * (100/ jawabanYgDiPilih.length); // menampilkan Hasil
+        nilai = String.valueOf(hasil);
+
+        if (hasil <= 39) {
+            index = "E";
+        } else if (hasil <= 54) {
+            index = "D";
+        } else if (hasil <= 59){
+            index = "C";
+        } else if (hasil <= 64) {
+            index = "C+";
+        } else if (hasil <= 69) {
+            index = "B-";
+        } else if (hasil <= 74) {
+            index = "B";
+        } else if (hasil <= 79) {
+            index = "B+";
+        } else if (hasil <= 84) {
+            index = "A-";
+        } else {
+            index = "A";
+        }
+
         tampilKotakAlert.setMessage("Benar :" +jumlahJawabanYgBenar +"\n"+ "Dari Soal :"
-                + (listKuis.size()+ "\n" + "Nilai Anda : "+hasil));
-
-
+                + (listKuis.size()+ "\n" + "Nilai Anda : "+hasil) + "\n" + index);
 
         tampilKotakAlert.setButton(AlertDialog.BUTTON_NEGATIVE, "Keluar",
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int which) {
                         cekPertanyaan = false;
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("nilai", nilai);
+                        editor.putString("index", index);
+                        editor.commit();
                         finish();
                     }
                 });
@@ -310,9 +340,11 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
             else{
                 noSalah = "No yang salah"+noSalah;
             }
+
             AlertDialog tampilKotakAlert;
             tampilKotakAlert = new AlertDialog.Builder(KuisActivity.this).create();
-            tampilKotakAlert.setTitle("Nilai");
+            tampilKotakAlert.setTitle("Anda Kehabisan waktu.");
+            tampilKotakAlert.setIcon(R.drawable.ic_sentiment_very_dissatisfied);
             tampilKotakAlert.setMessage("Benar " +jumlahJawabanYgBenar + " dari "
                     + (listKuis.size() +" soal. "+noSalah));
 

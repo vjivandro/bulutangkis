@@ -27,6 +27,7 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/editTextNama"
         android:layout_margin="20dp"
+        android:padding="10dp"
         android:background="@drawable/roundedbutton"
         android:textColor="@color/colorAccent"
         android:text="Lanjut"

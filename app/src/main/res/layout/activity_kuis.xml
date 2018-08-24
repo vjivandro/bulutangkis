@@ -30,7 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <android.support.design.widget.FloatingActionButton
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toStartOf="@+id/fab_done"
         app:layout_constraintStart_toEndOf="@+id/fab_prev"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 
     <android.support.design.widget.FloatingActionButton
@@ -69,6 +69,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.958"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>
