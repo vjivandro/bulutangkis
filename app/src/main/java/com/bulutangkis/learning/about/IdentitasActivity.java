@@ -16,7 +16,7 @@ import com.bulutangkis.learning.model.ProfilModel;
 
 import java.util.List;
 
-import static com.bulutangkis.learning.utils.getAllItems.getIdentitasItemList;
+import static com.bulutangkis.learning.dbhelper.getAllItems.getIdentitasItemList;
 
 public class IdentitasActivity extends AppCompatActivity {
     private LinearLayoutManager lLayout;

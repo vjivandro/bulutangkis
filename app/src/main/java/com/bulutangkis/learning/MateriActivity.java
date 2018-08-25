@@ -23,6 +23,8 @@ import com.bulutangkis.learning.model.MateriModel;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.bulutangkis.learning.dbhelper.getAllItems.getMateriItem;
+
 public class MateriActivity extends AppCompatActivity {
 
     private LinearLayoutManager lLayout;
@@ -32,7 +34,7 @@ public class MateriActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_materi);
 
-        List<MateriModel> rowListItem = getAllItemList();
+        List<MateriModel> rowListItem = getMateriItem();
         lLayout = new LinearLayoutManager(MateriActivity.this);
 
         RecyclerView rView = (RecyclerView)findViewById(R.id.recyclerview);
@@ -40,18 +42,6 @@ public class MateriActivity extends AppCompatActivity {
 
         MateriAdapter adapter = new MateriAdapter(MateriActivity.this, rowListItem);
         rView.setAdapter(adapter);
-    }
-
-    private List<MateriModel> getAllItemList(){
-
-        List<MateriModel> allItems = new ArrayList<MateriModel>();
-        allItems.add(new MateriModel("Sejarah Permainan Bulutangkis", R.drawable.materi));
-        allItems.add(new MateriModel("Peraturan Permainan Bulutangkis", R.drawable.materi));
-        allItems.add(new MateriModel("Perwasitan Bulutangkis", R.drawable.materi));
-        allItems.add(new MateriModel("Strategi dan Taktik Bermain Bulutangkis", R.drawable.materi));
-        allItems.add(new MateriModel("Teknik Service dalam Permainan Bulutangkis", R.drawable.materi));
-
-        return allItems;
     }
 
     public class MateriAdapter extends RecyclerView.Adapter<MateriAdapter.ViewHolder> {

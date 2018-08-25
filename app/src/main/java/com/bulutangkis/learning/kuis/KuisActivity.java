@@ -20,6 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bulutangkis.learning.R;
+import com.bulutangkis.learning.about.AboutActivity;
 import com.bulutangkis.learning.dbhelper.DatabaseHelper;
 import com.bulutangkis.learning.model.KuisModel;
 
@@ -114,7 +115,7 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v)
             {
                 if(inputUser.getText().toString().equals("")){
-                    Toast.makeText(getBaseContext(), "Isi dulu", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Tidak boleh kosong", Toast.LENGTH_LONG).show();
                 }else{
                     txtnama.setText(inputUser.getText().toString());
                     startKuis();
@@ -251,8 +252,8 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
         else{
             noSalah = "No yang salah"+noSalah;
         }
-        AlertDialog tampilKotakAlert;
-        tampilKotakAlert = new AlertDialog.Builder(KuisActivity.this).create();
+
+        AlertDialog.Builder tampilKotakAlert = new AlertDialog.Builder(KuisActivity.this);
         tampilKotakAlert.setTitle("Hasil");
         int hasil = jumlahJawabanYgBenar * (100/ jawabanYgDiPilih.length); // menampilkan Hasil
         nilai = String.valueOf(hasil);
@@ -280,7 +281,7 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
         tampilKotakAlert.setMessage("Benar :" +jumlahJawabanYgBenar +"\n"+ "Dari Soal :"
                 + (listKuis.size()+ "\n" + "Nilai Anda : "+hasil) + "\n" + index);
 
-        tampilKotakAlert.setButton(AlertDialog.BUTTON_NEGATIVE, "Keluar",
+        tampilKotakAlert.setNegativeButton("Keluar",
                 new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int which) {
@@ -341,14 +342,13 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
                 noSalah = "No yang salah"+noSalah;
             }
 
-            AlertDialog tampilKotakAlert;
-            tampilKotakAlert = new AlertDialog.Builder(KuisActivity.this).create();
-            tampilKotakAlert.setTitle("Anda Kehabisan waktu.");
+            android.app.AlertDialog.Builder tampilKotakAlert = new android.app.AlertDialog.Builder(KuisActivity.this);
+            tampilKotakAlert.setTitle("Anda Kehabisan waktu");
             tampilKotakAlert.setIcon(R.drawable.ic_sentiment_very_dissatisfied);
             tampilKotakAlert.setMessage("Benar " +jumlahJawabanYgBenar + " dari "
                     + (listKuis.size() +" soal. "+noSalah));
 
-            tampilKotakAlert.setButton(AlertDialog.BUTTON_NEUTRAL, "Lagi",
+            tampilKotakAlert.setPositiveButton( "Lagi",
                     new DialogInterface.OnClickListener() {
 
                         public void onClick(DialogInterface dialog, int which) {
@@ -361,7 +361,7 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
                         }
                     });
 
-            tampilKotakAlert.setButton(AlertDialog.BUTTON_NEGATIVE, "Keluar",
+            tampilKotakAlert.setPositiveButton("Keluar",
                     new DialogInterface.OnClickListener() {
 
                         public void onClick(DialogInterface dialog, int which) {

@@ -16,13 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bulutangkis.learning.R;
-import com.bulutangkis.learning.FipWebviewActivity;
-import com.bulutangkis.learning.UMWebviewActivity;
 import com.bulutangkis.learning.model.ProfilModel;
 
 import java.util.List;
 
-import static com.bulutangkis.learning.utils.getAllItems.getProfileItemList;
+import static com.bulutangkis.learning.dbhelper.getAllItems.getProfileItemList;
 
 public class AboutActivity extends AppCompatActivity {
 
@@ -103,7 +101,7 @@ public class AboutActivity extends AppCompatActivity {
                 } else if (getPosition() == 3) {
                     startActivity(new Intent(itemView.getContext(), RiwayatJabatanActivity.class));
                 } else if (getPosition() == 4) {
-
+                    startActivity(new Intent(itemView.getContext(), SertifikatActivity.class));
                 } else if (getPosition() == 5) {
                     startActivity(new Intent(itemView.getContext(), FipWebviewActivity.class));
                 } else if (getPosition() == 6) {

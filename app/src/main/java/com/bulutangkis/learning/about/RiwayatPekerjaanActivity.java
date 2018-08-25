@@ -15,7 +15,7 @@ import com.bulutangkis.learning.model.RiwayatPekerjaanModel;
 
 import java.util.List;
 
-import static com.bulutangkis.learning.utils.getAllItems.getRiwayatList;
+import static com.bulutangkis.learning.dbhelper.getAllItems.getRiwayatList;
 
 public class RiwayatPekerjaanActivity extends AppCompatActivity {
 

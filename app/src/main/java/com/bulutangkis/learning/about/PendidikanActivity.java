@@ -15,7 +15,7 @@ import com.bulutangkis.learning.model.PendidikanModel;
 
 import java.util.List;
 
-import static com.bulutangkis.learning.utils.getAllItems.getPendidikanList;
+import static com.bulutangkis.learning.dbhelper.getAllItems.getPendidikanList;
 
 public class PendidikanActivity extends AppCompatActivity {
 

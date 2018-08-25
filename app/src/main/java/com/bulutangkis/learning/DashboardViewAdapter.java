@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bulutangkis.learning.about.AboutActivity;
 import com.bulutangkis.learning.kuis.PrepareKuisActivity;
 import com.bulutangkis.learning.model.DashBoardModel;
+import com.bulutangkis.learning.video.FirstPlayerActivity;
 
 import java.util.List;
 
