@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bulutangkis.learning">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -48,7 +50,7 @@
             android:label="Teknik Servis dan Pukulan Bulutangkis"
             android:parentActivityName=".MateriActivity" />
         <activity
-            android:name=".about.ProfileActivity"
+            android:name=".about.AboutActivity"
             android:label="Profil Apliksi"
             android:parentActivityName=".MainActivity" />
         <activity
@@ -60,15 +62,27 @@
         <activity
             android:name=".about.IdentitasActivity"
             android:label="Identitas"
-            android:parentActivityName=".about.ProfileActivity" />
+            android:parentActivityName=".about.AboutActivity" />
         <activity
             android:name=".about.PendidikanActivity"
             android:label="Pendidikan"
-            android:parentActivityName=".about.ProfileActivity" />
+            android:parentActivityName=".about.AboutActivity" />
         <activity
             android:name=".about.RiwayatPekerjaanActivity"
             android:label="Riwayat Pekerjaan"
-            android:parentActivityName=".about.ProfileActivity"/>
+            android:parentActivityName=".about.AboutActivity" />
+        <activity
+            android:name=".about.RiwayatJabatanActivity"
+            android:label="Riwayat Jabatan"
+            android:parentActivityName=".about.AboutActivity" />
+        <activity
+            android:name=".FipWebviewActivity"
+            android:label="Fakultas Ilmu Pendidikan"
+            android:parentActivityName=".about.AboutActivity"/>
+        <activity
+            android:name=".UMWebviewActivity"
+            android:label="Universitas Negeri Malang"
+            android:parentActivityName=".about.AboutActivity"/>
     </application>
 
 </manifest>

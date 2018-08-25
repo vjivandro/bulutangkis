@@ -1,7 +1,6 @@
 package com.bulutangkis.learning.about;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,8 +14,9 @@ import android.widget.TextView;
 import com.bulutangkis.learning.R;
 import com.bulutangkis.learning.model.ProfilModel;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static com.bulutangkis.learning.utils.getAllItems.getIdentitasItemList;
 
 public class IdentitasActivity extends AppCompatActivity {
     private LinearLayoutManager lLayout;
@@ -27,7 +27,7 @@ public class IdentitasActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        List<ProfilModel> rowListItem = getProfileItemList();
+        List<ProfilModel> rowListItem = getIdentitasItemList();
         lLayout = new LinearLayoutManager(IdentitasActivity.this);
 
         RecyclerView rView = (RecyclerView)findViewById(R.id.recyclerview);
@@ -36,19 +36,6 @@ public class IdentitasActivity extends AppCompatActivity {
         ProfilAdapter adapter = new ProfilAdapter(rowListItem, IdentitasActivity.this);
         rView.setAdapter(adapter);
 
-    }
-
-    private List<ProfilModel> getProfileItemList() {
-        List<ProfilModel> allItems = new ArrayList<ProfilModel>();
-        allItems.add(new ProfilModel(R.drawable.ic_phone, "0341 - 460975"));
-        allItems.add(new ProfilModel(R.drawable.ic_accessibility, "Laki -Laki"));
-        allItems.add(new ProfilModel(R.drawable.ic_portrait, "130809383"));
-        allItems.add(new ProfilModel(R.drawable.ic_work, "Fakultas Ilmu Pendidikan"));
-        allItems.add(new ProfilModel(R.drawable.ic_account_balance, "Universitas Negeri Malang"));
-        allItems.add(new ProfilModel(R.drawable.ic_assignment_ind, "Dosen FIP"));
-        allItems.add(new ProfilModel(R.drawable.ic_event_seat, "Lektor Kepala"));
-
-        return allItems;
     }
 
     private class ProfilAdapter extends RecyclerView.Adapter<ProfilAdapter.ProfilHolder>{

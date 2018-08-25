@@ -1,6 +1,8 @@
 package com.bulutangkis.learning.about;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,56 +16,36 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bulutangkis.learning.R;
+import com.bulutangkis.learning.FipWebviewActivity;
+import com.bulutangkis.learning.UMWebviewActivity;
 import com.bulutangkis.learning.model.ProfilModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class ProfileActivity extends AppCompatActivity {
+import static com.bulutangkis.learning.utils.getAllItems.getProfileItemList;
+
+public class AboutActivity extends AppCompatActivity {
 
     private LinearLayoutManager lLayout;
-    private TextView nama_tv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_about);
 
         List<ProfilModel> rowListItem = getProfileItemList();
-        lLayout = new LinearLayoutManager(ProfileActivity.this);
+        lLayout = new LinearLayoutManager(AboutActivity.this);
 
         RecyclerView rView = (RecyclerView)findViewById(R.id.recyclerview);
         GridLayoutManager manager = new GridLayoutManager(this, 2,
                 GridLayoutManager.VERTICAL, false);
         rView.setLayoutManager(manager);
 
-        ProfilAdapter adapter = new ProfilAdapter(rowListItem, ProfileActivity.this);
+        ProfilAdapter adapter = new ProfilAdapter(rowListItem, AboutActivity.this);
         rView.setAdapter(adapter);
 
-        nama_tv = (TextView) findViewById(R.id.tv_nama);
+
     }
-
-    private List<ProfilModel> getProfileItemList() {
-        List<ProfilModel> allItems = new ArrayList<ProfilModel>();
-//        allItems.add(new ProfilModel(R.drawable.ic_phone, "0341 - 460975"));
-//        allItems.add(new ProfilModel(R.drawable.ic_accessibility, "Laki -Laki"));
-//        allItems.add(new ProfilModel(R.drawable.ic_portrait, "130809383"));
-//        allItems.add(new ProfilModel(R.drawable.ic_work, "Fakultas Ilmu Pendidikan"));
-//        allItems.add(new ProfilModel(R.drawable.ic_account_balance, "Universitas Negeri Malang"));
-//        allItems.add(new ProfilModel(R.drawable.ic_assignment_ind, "Dosen FIP"));
-//        allItems.add(new ProfilModel(R.drawable.ic_event_seat, "Lektor Kepala"));
-
-
-        allItems.add(new ProfilModel(R.drawable.ic_account_circle, "Identitas"));
-        allItems.add(new ProfilModel(R.drawable.ic_account_balance, "Pendidikan"));
-        allItems.add(new ProfilModel(R.drawable.ic_work, "Riwayat Pekerjaan"));
-        allItems.add(new ProfilModel(R.drawable.ic_timeline, " Riwayat Jabatan, Pangkat, Golongan"));
-        allItems.add(new ProfilModel(R.drawable.ic_assignment_ind, "Sertifikat"));
-        allItems.add(new ProfilModel(R.drawable.ic_android, "Mobile Developer"));
-
-        return allItems;
-    }
-
 
     private class ProfilAdapter extends RecyclerView.Adapter<ProfilAdapter.ProfilHolder>{
 
@@ -119,11 +101,25 @@ public class ProfileActivity extends AppCompatActivity {
                 } else if (getPosition() == 2) {
                     startActivity(new Intent(itemView.getContext(), RiwayatPekerjaanActivity.class));
                 } else if (getPosition() == 3) {
-
+                    startActivity(new Intent(itemView.getContext(), RiwayatJabatanActivity.class));
                 } else if (getPosition() == 4) {
 
                 } else if (getPosition() == 5) {
-
+                    startActivity(new Intent(itemView.getContext(), FipWebviewActivity.class));
+                } else if (getPosition() == 6) {
+                    startActivity(new Intent(itemView.getContext(), UMWebviewActivity.class));
+                } else if (getPosition() == 7) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(AboutActivity.this);
+                    builder.setTitle("Mobile Developer");
+                    builder.setIcon(R.drawable.ic_android);
+                    builder.setMessage("Juris Vassa Ivandro, S.Kom\n082143594666\nvjivandro77@gmail.com");
+                    builder.setPositiveButton("Oke", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            //getActivity().finish();
+                        }
+                    });
+                    builder.show();
                 }
             }
         }

@@ -11,13 +11,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bulutangkis.learning.R;
-import com.bulutangkis.learning.model.PendidikanModel;
 import com.bulutangkis.learning.model.RiwayatPekerjaanModel;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
 import java.util.List;
+
+import static com.bulutangkis.learning.utils.getAllItems.getRiwayatList;
 
 public class RiwayatPekerjaanActivity extends AppCompatActivity {
 
@@ -36,14 +34,6 @@ public class RiwayatPekerjaanActivity extends AppCompatActivity {
 
         RiwayatPekerjaanAdapter adapter = new RiwayatPekerjaanAdapter(rowListItem, RiwayatPekerjaanActivity.this);
         rView.setAdapter(adapter);
-    }
-
-    private List<RiwayatPekerjaanModel> getRiwayatList() {
-        List<RiwayatPekerjaanModel> allitems = new ArrayList<RiwayatPekerjaanModel>();
-        allitems.add(new RiwayatPekerjaanModel("1980 - Sampai sekarang","Fakultas Ilmu Pendidikan Universitas Negeri Malang","Pegawai Negeri Sipil"));
-        allitems.add(new RiwayatPekerjaanModel("1986-1989","Program Pendidikan Olahraga dan Kesehatan FIP IKIP Malang","Sekretaris Program   "));
-        allitems.add(new RiwayatPekerjaanModel("1990-1995","Proyek P2T IKIP Malang.","Bendahara Proyek "));
-        return allitems;
     }
 
     public class RiwayatPekerjaanAdapter extends RecyclerView.Adapter<RiwayatPekerjaanAdapter.ViewHolder> {

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bulutangkis.learning.about.ProfileActivity;
+import com.bulutangkis.learning.about.AboutActivity;
 import com.bulutangkis.learning.kuis.PrepareKuisActivity;
 import com.bulutangkis.learning.model.DashBoardModel;
 
@@ -65,7 +65,7 @@ public class DashboardViewAdapter extends RecyclerView.Adapter<DashboardViewAdap
             }else if (getPosition() == 2) {
                 v.getContext().startActivity(new Intent(v.getContext(), PrepareKuisActivity.class));
             }else if (getPosition() == 3) {
-                v.getContext().startActivity(new Intent(v.getContext(), ProfileActivity.class));
+                v.getContext().startActivity(new Intent(v.getContext(), AboutActivity.class));
             }
         }
     }

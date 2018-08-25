@@ -10,7 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.bulutangkis.learning.about.ProfileActivity;
+import com.bulutangkis.learning.about.AboutActivity;
 import com.bulutangkis.learning.model.DashBoardModel;
 
 import java.util.ArrayList;
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            startActivity(new Intent(this, ProfileActivity.class));
+            startActivity(new Intent(this, AboutActivity.class));
             return true;
         }
         return super.onOptionsItemSelected(item);

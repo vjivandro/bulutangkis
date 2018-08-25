@@ -12,10 +12,10 @@ import android.widget.TextView;
 
 import com.bulutangkis.learning.R;
 import com.bulutangkis.learning.model.PendidikanModel;
-import com.bulutangkis.learning.model.ProfilModel;
 
-import java.util.ArrayList;
 import java.util.List;
+
+import static com.bulutangkis.learning.utils.getAllItems.getPendidikanList;
 
 public class PendidikanActivity extends AppCompatActivity {
 
@@ -34,18 +34,6 @@ public class PendidikanActivity extends AppCompatActivity {
 
         PendidikanAdapter adapter = new PendidikanAdapter(rowListItem, PendidikanActivity.this);
         rView.setAdapter(adapter);
-    }
-
-    private List<PendidikanModel> getPendidikanList() {
-        List<PendidikanModel> allItems = new ArrayList<PendidikanModel>();
-        allItems.add(new PendidikanModel("Sekolah Dasar", "SDN Purworejo I, Kec. Pakem, Kab. Sleman, Daerah Istimewa Yogyakarta", "1959 –1965","SD"));
-        allItems.add(new PendidikanModel("SLTP", "SMP IKIP II Yogyakarta", "1965–1968","SMP"));
-        allItems.add(new PendidikanModel("SLTA", "SMA IKIP II Yogyakarta", "1968–1971","SMA"));
-        allItems.add(new PendidikanModel("Sarjana Muda", "Sekolah Tinggi Olahraga Yogyakarta", "1972–1975","Sarjana Muda"));
-        allItems.add(new PendidikanModel("Sarjana", "Fakultas Pendidikan Ilmu Keolah-ragaan  IKIP Yogyakarta (Universitas Negeri Yogyakarta)", "1976–1979","Sarjana Pendidikan Olahraga Prestasi"));
-        allItems.add(new PendidikanModel("Magister", "Program Studi Ilmu Kesehatan Olahraga Universitas Airlangga Surabaya", "1997–2000","Magister Kesehatan"));
-
-        return allItems;
     }
 
     public class PendidikanAdapter extends RecyclerView.Adapter<PendidikanAdapter.ViewHolder> {
