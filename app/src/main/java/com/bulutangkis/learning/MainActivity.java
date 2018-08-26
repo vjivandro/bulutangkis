@@ -1,19 +1,27 @@
 package com.bulutangkis.learning;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Toast;
 
 import com.bulutangkis.learning.model.DashBoardModel;
+import com.bulutangkis.learning.model.MateriModel;
+import com.bulutangkis.learning.utils.MyIntro;
 
 import java.util.List;
 
-import static com.bulutangkis.learning.dbhelper.getAllItems.getDashboard;
+import static com.bulutangkis.learning.helper.getAllItems.getDashboard;
 
 public class MainActivity extends AppCompatActivity {
+    private static long back_pressed;
+    public boolean isFirstStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,10 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 GridLayoutManager.VERTICAL, false);
         rView.setLayoutManager(manager);
         rView.addItemDecoration(new ItemDecorationColumns(2, 2));
-
     }
-
-
 
     private class ItemDecorationColumns extends RecyclerView.ItemDecoration {
         private int mSizeGridSpacingPx;
@@ -88,5 +93,14 @@ public class MainActivity extends AppCompatActivity {
             }
             outRect.bottom = 0;
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        if (back_pressed + 2000 > System.currentTimeMillis()) super.onBackPressed();
+        else Toast.makeText(getBaseContext(), "Tekan Sekali Lagi Untuk Keluar", Toast.LENGTH_SHORT).show();
+        back_pressed = System.currentTimeMillis();
+
     }
 }

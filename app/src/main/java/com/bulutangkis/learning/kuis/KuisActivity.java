@@ -20,8 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bulutangkis.learning.R;
-import com.bulutangkis.learning.about.AboutActivity;
-import com.bulutangkis.learning.dbhelper.DatabaseHelper;
+import com.bulutangkis.learning.helper.DatabaseHelper;
 import com.bulutangkis.learning.model.KuisModel;
 
 import java.util.ArrayList;
@@ -47,7 +46,7 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
     int urutanPertanyaan = 0;
     private SharedPreferences sharedPreferences;
     private String noSalah = "";
-    private String nilai, index;
+    private String nama, nilai, index;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,9 +114,13 @@ public class KuisActivity extends AppCompatActivity implements View.OnClickListe
             public void onClick(View v)
             {
                 if(inputUser.getText().toString().equals("")){
-                    Toast.makeText(getBaseContext(), "Tidak boleh kosong", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Maaf! Nama tidak boleh kosong", Toast.LENGTH_LONG).show();
                 }else{
                     txtnama.setText(inputUser.getText().toString());
+                    nama = inputUser.getText().toString();
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("nama", nama);
+                    editor.commit();
                     startKuis();
                     dialog.dismiss();
                 }

@@ -1,6 +1,5 @@
 package com.bulutangkis.learning.video;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -11,9 +10,9 @@ import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
-public class FirstPlayerActivity extends YouTubeBaseActivity {
+public class SecondPlayerActivity extends YouTubeBaseActivity {
     public static final String API_KEY = "AIzaSyC7mWspoPyAIvcErI9A-EgYKSAOgLaxIDI";
-    public static final  String VIDEO_ID = "4YU0Dtegq2g";
+    public static final  String VIDEO_ID = "8T8PejwXlRk";
     public TextView label;
 
     @Override
@@ -42,8 +41,9 @@ public class FirstPlayerActivity extends YouTubeBaseActivity {
                     @Override
                     public void onInitializationFailure(YouTubePlayer.Provider provider,
                                                         YouTubeInitializationResult youTubeInitializationResult) {
-                        Toast.makeText(FirstPlayerActivity.this, "Youtube Failed!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SecondPlayerActivity.this, "Youtube Failed!", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 }
+

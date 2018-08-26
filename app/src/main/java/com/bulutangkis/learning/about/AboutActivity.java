@@ -20,7 +20,7 @@ import com.bulutangkis.learning.model.ProfilModel;
 
 import java.util.List;
 
-import static com.bulutangkis.learning.dbhelper.getAllItems.getProfileItemList;
+import static com.bulutangkis.learning.helper.getAllItems.getProfileItemList;
 
 public class AboutActivity extends AppCompatActivity {
 

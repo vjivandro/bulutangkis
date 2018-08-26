@@ -11,13 +11,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bulutangkis.learning.R;
-import com.bulutangkis.learning.model.PendidikanModel;
 import com.bulutangkis.learning.model.SertifikatModel;
 
 import java.util.List;
 
-import static com.bulutangkis.learning.dbhelper.getAllItems.getPendidikanList;
-import static com.bulutangkis.learning.dbhelper.getAllItems.getSertifikatItem;
+import static com.bulutangkis.learning.helper.getAllItems.getSertifikatItem;
 
 public class SertifikatActivity extends AppCompatActivity {
     private LinearLayoutManager lLayout;

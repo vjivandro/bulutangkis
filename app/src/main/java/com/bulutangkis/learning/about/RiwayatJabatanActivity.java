@@ -15,7 +15,7 @@ import com.bulutangkis.learning.model.RiwayatJabatanModel;
 
 import java.util.List;
 
-import static com.bulutangkis.learning.dbhelper.getAllItems.getJabatanItem;
+import static com.bulutangkis.learning.helper.getAllItems.getJabatanItem;
 
 public class RiwayatJabatanActivity extends AppCompatActivity {
     private LinearLayoutManager lLayout;

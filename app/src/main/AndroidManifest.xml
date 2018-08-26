@@ -7,21 +7,29 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme">
+            android:name=".SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".utils.MyIntro"
+            android:theme="@style/FullscreenTheme" />
+
+        <activity
+            android:name=".MainActivity"
+            android:label="Dashboard"/>
         <activity
             android:name=".MateriActivity"
             android:label="Materi"
@@ -88,7 +96,17 @@
             android:name=".about.SertifikatActivity"
             android:label="Sertifikat"
             android:parentActivityName=".about.AboutActivity" />
-        <activity android:name=".video.FirstPlayerActivity"></activity>
+        <activity
+            android:name=".video.FirstPlayerActivity"
+            android:label="Video Tutorial 01"
+            android:parentActivityName=".VideoActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".video.SecondPlayerActivity"
+            android:label="Video Tutorial 02"
+            android:parentActivityName=".VideoActivity"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>

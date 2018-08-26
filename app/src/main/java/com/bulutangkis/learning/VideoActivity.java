@@ -12,14 +12,13 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bulutangkis.learning.model.MateriModel;
 import com.bulutangkis.learning.model.VideoModel;
 import com.bulutangkis.learning.video.FirstPlayerActivity;
+import com.bulutangkis.learning.video.SecondPlayerActivity;
 
 import java.util.List;
 
-import static com.bulutangkis.learning.dbhelper.getAllItems.getMateriItem;
-import static com.bulutangkis.learning.dbhelper.getAllItems.getVideoItems;
+import static com.bulutangkis.learning.helper.getAllItems.getVideoItems;
 
 public class VideoActivity extends AppCompatActivity {
     private LinearLayoutManager lLayout;
@@ -83,10 +82,16 @@ public class VideoActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                String title = label.getText().toString();
                 if (getPosition() == 0) {
-                    startActivity(new Intent(itemView.getContext(), FirstPlayerActivity.class));
-                } else if (getPosition() == 1) {
+                    Intent video1 = new Intent(itemView.getContext(), FirstPlayerActivity.class);
+                    video1.putExtra("title", title);
+                    startActivity(video1);
 
+                } else if (getPosition() == 1) {
+                    Intent video2 = new Intent(itemView.getContext(), SecondPlayerActivity.class);
+                    video2.putExtra("title", title);
+                    startActivity(video2);
                 }
             }
         }

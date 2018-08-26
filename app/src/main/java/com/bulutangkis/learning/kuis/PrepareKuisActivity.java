@@ -3,6 +3,7 @@ package com.bulutangkis.learning.kuis;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -14,9 +15,11 @@ import com.bulutangkis.learning.R;
 public class PrepareKuisActivity extends AppCompatActivity implements View.OnClickListener {
     private SharedPreferences sharedPreferences;
     private Button mulai;
-    private TextView history;
+    private TextView history_tv, nama_tv;
 
-    String nilaiakhir, indekakhir;
+    String nama, nilaiakhir, indekakhir, index;
+    int hasil;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,12 +27,49 @@ public class PrepareKuisActivity extends AppCompatActivity implements View.OnCli
         sharedPreferences = getSharedPreferences("my_shared_preferences", Context.MODE_PRIVATE);
 
         mulai = (Button) findViewById(R.id.btn_siap);
-        history = (TextView) findViewById(R.id.nilai_terakhir);
+        history_tv = (TextView) findViewById(R.id.nilai_terakhir);
+        nama_tv = (TextView) findViewById(R.id.tv_nama);
 
         nilaiakhir = sharedPreferences.getString("nilai", "");
         indekakhir = sharedPreferences.getString("index", "");
+        nama = sharedPreferences.getString("nama", "");
 
-        history.setText(nilaiakhir + " = " + indekakhir);
+        nama_tv.setText(nama);
+
+        if (hasil <= 39) {
+            index = "E";
+            history_tv.setTextColor(Color.RED);
+        } else if (hasil <= 54) {
+            index = "D";
+            history_tv.setTextColor(Color.RED);
+        } else if (hasil <= 59){
+            index = "C";
+            history_tv.setTextColor(Color.rgb(255,99,71));
+        } else if (hasil <= 64) {
+            index = "C+";
+            history_tv.setTextColor(Color.rgb(255,99,71));
+        } else if (hasil <= 69) {
+            index = "B-";
+            history_tv.setTextColor(Color.rgb(255,99,71));
+        } else if (hasil <= 74) {
+            index = "B";
+            history_tv.setTextColor(Color.rgb(255,99,71));
+        } else if (hasil <= 79) {
+            index = "B+";
+            history_tv.setTextColor(Color.GREEN);
+        } else if (hasil <= 84) {
+            index = "A-";
+            history_tv.setTextColor(Color.GREEN);
+        } else {
+            index = "A";
+            history_tv.setTextColor(Color.GREEN);
+        }
+
+        if (nilaiakhir.isEmpty() && indekakhir.isEmpty()) {
+            history_tv.setText("");
+        } else {
+            history_tv.setText(nilaiakhir + " ( " + indekakhir + " ) " );
+        }
 
         mulai.setOnClickListener(this);
     }
