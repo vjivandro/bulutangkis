@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 GridLayoutManager.VERTICAL, false);
         rView.setLayoutManager(manager);
         rView.addItemDecoration(new ItemDecorationColumns(2, 2));
+
     }
 
     private class ItemDecorationColumns extends RecyclerView.ItemDecoration {
