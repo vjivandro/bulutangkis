@@ -12,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
             android:name=".SplashScreen"
             android:theme="@style/AppTheme.NoActionBar">
@@ -22,14 +21,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".utils.MyIntro"
             android:theme="@style/FullscreenTheme" />
-
         <activity
             android:name=".MainActivity"
-            android:label="Dashboard"/>
+            android:label="Dashboard" />
         <activity
             android:name=".MateriActivity"
             android:label="Materi"
@@ -97,6 +94,10 @@
             android:label="Sertifikat"
             android:parentActivityName=".about.AboutActivity" />
         <activity
+            android:name=".about.InformasiActivity"
+            android:label="Informasi"
+            android:parentActivityName=".about.AboutActivity"/>
+        <activity
             android:name=".video.FirstPlayerActivity"
             android:label="Video Tutorial 01"
             android:parentActivityName=".VideoActivity"
@@ -106,7 +107,6 @@
             android:label="Video Tutorial 02"
             android:parentActivityName=".VideoActivity"
             android:theme="@style/AppTheme" />
-
     </application>
 
 </manifest>

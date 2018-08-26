@@ -107,6 +107,8 @@ public class AboutActivity extends AppCompatActivity {
                 } else if (getPosition() == 6) {
                     startActivity(new Intent(itemView.getContext(), UMWebviewActivity.class));
                 } else if (getPosition() == 7) {
+                    startActivity(new Intent(itemView.getContext(), InformasiActivity.class));
+                } else if (getPosition() == 8) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(AboutActivity.this);
                     builder.setTitle("Mobile Developer");
                     builder.setIcon(R.drawable.ic_android);
