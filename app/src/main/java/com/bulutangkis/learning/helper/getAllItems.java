@@ -4,6 +4,7 @@ import com.bulutangkis.learning.R;
 import com.bulutangkis.learning.model.DashBoardModel;
 import com.bulutangkis.learning.model.MateriModel;
 import com.bulutangkis.learning.model.PendidikanModel;
+import com.bulutangkis.learning.model.PresentasiModel;
 import com.bulutangkis.learning.model.ProfilModel;
 import com.bulutangkis.learning.model.RiwayatJabatanModel;
 import com.bulutangkis.learning.model.RiwayatPekerjaanModel;
@@ -20,9 +21,9 @@ public class getAllItems {
 
         List<DashBoardModel> allItems = new ArrayList<DashBoardModel>();
         allItems.add(new DashBoardModel("Materi", R.drawable.ic_materi));
-        allItems.add(new DashBoardModel("Video Tutorial", R.drawable.ic_video));
+        allItems.add(new DashBoardModel("Presentasi", R.drawable.ic_ppt));
         allItems.add(new DashBoardModel("Test", R.drawable.ic_test));
-        allItems.add(new DashBoardModel("About", R.drawable.ic_about));
+        allItems.add(new DashBoardModel("Video Tutorial", R.drawable.ic_video));
 
         return allItems;
     }
@@ -31,11 +32,21 @@ public class getAllItems {
     public static List<MateriModel> getMateriItem(){
 
         List<MateriModel> allItems = new ArrayList<MateriModel>();
-        allItems.add(new MateriModel("Sejarah Permainan Bulutangkis", R.drawable.ic_book));
-        allItems.add(new MateriModel("Peraturan Permainan Bulutangkis", R.drawable.ic_book));
-        allItems.add(new MateriModel("Perwasitan Bulutangkis", R.drawable.ic_book));
-        allItems.add(new MateriModel("Strategi dan Taktik Bermain Bulutangkis", R.drawable.ic_book));
-        allItems.add(new MateriModel("Teknik Service dalam Permainan Bulutangkis", R.drawable.ic_book));
+        allItems.add(new MateriModel("Sejarah Permainan Bulutangkis", R.drawable.pdf));
+        allItems.add(new MateriModel("Peraturan Permainan Bulutangkis", R.drawable.pdf));
+        allItems.add(new MateriModel("Perwasitan Bulutangkis", R.drawable.pdf));
+        allItems.add(new MateriModel("Strategi dan Taktik Bermain Bulutangkis", R.drawable.pdf));
+        allItems.add(new MateriModel("Teknik Service dalam Permainan Bulutangkis", R.drawable.pdf));
+
+        return allItems;
+    }
+
+    public static List<PresentasiModel> getPresentasi() {
+
+        List<PresentasiModel> allItems = new ArrayList<PresentasiModel>();
+        allItems.add(new PresentasiModel("Sikap Siaga", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Teknik Dasar Langkah Kaki", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Teknik Pegang Raket Grip", R.drawable.ppt));
 
         return allItems;
     }

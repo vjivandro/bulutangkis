@@ -62,11 +62,11 @@ public class DashboardViewAdapter extends RecyclerView.Adapter<DashboardViewAdap
             if (getPosition() == 0) {
                 v.getContext().startActivity(new Intent(v.getContext(), MateriActivity.class));
             } else if (getPosition() == 1) {
-                v.getContext().startActivity(new Intent(v.getContext(), VideoActivity.class));
+                v.getContext().startActivity(new Intent(v.getContext(), PresentasiActivity.class));
             }else if (getPosition() == 2) {
                 v.getContext().startActivity(new Intent(v.getContext(), PrepareKuisActivity.class));
             }else if (getPosition() == 3) {
-                v.getContext().startActivity(new Intent(v.getContext(), AboutActivity.class));
+                v.getContext().startActivity(new Intent(v.getContext(), VideoActivity.class));
             }
         }
     }

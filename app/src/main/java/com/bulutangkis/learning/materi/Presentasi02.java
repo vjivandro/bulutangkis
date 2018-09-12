@@ -13,9 +13,9 @@ import com.shockwave.pdfium.PdfDocument;
 
 import java.util.List;
 
-public class PeraturanBulutangkis extends AppCompatActivity implements OnPageChangeListener,OnLoadCompleteListener {
+public class Presentasi02 extends AppCompatActivity implements OnPageChangeListener,OnLoadCompleteListener {
     private static final String TAG = PeraturanBulutangkis.class.getSimpleName();
-    public static final String SAMPLE_FILE = "peraturanbulutangkis.pdf";
+    public static final String SAMPLE_FILE = "teknikdasarlangkahkaki.pdf";
     PDFView pdfView;
     Integer pageNumber = 0;
     String pdfFileName;
@@ -36,8 +36,7 @@ public class PeraturanBulutangkis extends AppCompatActivity implements OnPageCha
         pdfView.fromAsset(SAMPLE_FILE)
                 .defaultPage(pageNumber)
                 .enableSwipe(true)
-
-                .swipeHorizontal(false)
+                .swipeHorizontal(true)
                 .onPageChange(this)
                 .enableAnnotationRendering(true)
                 .onLoad(this)
@@ -71,3 +70,4 @@ public class PeraturanBulutangkis extends AppCompatActivity implements OnPageCha
         }
     }
 }
+

@@ -30,7 +30,6 @@ import static com.bulutangkis.learning.helper.getAllItems.getMateriItem;
 public class MateriActivity extends AppCompatActivity {
 
     private LinearLayoutManager lLayout;
-    public boolean isFirstStart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

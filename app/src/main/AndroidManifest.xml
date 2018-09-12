@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:maxSdkVersion="22" android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:maxSdkVersion="22" android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -96,7 +98,7 @@
         <activity
             android:name=".about.InformasiActivity"
             android:label="Informasi"
-            android:parentActivityName=".about.AboutActivity"/>
+            android:parentActivityName=".about.AboutActivity" />
         <activity
             android:name=".video.FirstPlayerActivity"
             android:label="Video Tutorial 01"
@@ -107,6 +109,26 @@
             android:label="Video Tutorial 02"
             android:parentActivityName=".VideoActivity"
             android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".PresentasiActivity"
+            android:label="Presentasi"
+            android:parentActivityName=".MateriActivity"/>
+
+        <activity
+            android:name=".materi.Presentasi01"
+            android:label="Sikap Siaga"
+            android:parentActivityName=".PresentasiActivity" />
+
+        <activity
+            android:name=".materi.Presentasi02"
+            android:label="Sikap Siaga"
+            android:parentActivityName=".PresentasiActivity" />
+
+        <activity
+            android:name=".materi.Presentasi03"
+            android:label="Sikap Siaga"
+            android:parentActivityName=".PresentasiActivity" />
     </application>
 
 </manifest>
