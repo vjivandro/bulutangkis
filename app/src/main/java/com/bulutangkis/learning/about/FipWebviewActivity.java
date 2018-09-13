@@ -13,7 +13,7 @@ import com.bulutangkis.learning.R;
 
 public class FipWebviewActivity extends AppCompatActivity {
 
-    private String Url_Fip = "https://www.um.ac.id/page/fakultas-ilmu-pendidikan";
+    private String Url_Fip = "http://fik.um.ac.id";
     private WebView webView;
     private ConnectivityManager conMgr;
 
