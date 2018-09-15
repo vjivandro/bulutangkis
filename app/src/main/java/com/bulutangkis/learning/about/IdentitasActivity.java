@@ -45,7 +45,7 @@ public class IdentitasActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent email = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                        "mailto","vjivandro77@gmail.com", null
+                        "mailto","setyo.budiwanto@yahoo.com", null
                 ));
                 email.putExtra(Intent.EXTRA_SUBJECT, "Judul Email");
                 startActivity(Intent.createChooser(email, "Send email..."));

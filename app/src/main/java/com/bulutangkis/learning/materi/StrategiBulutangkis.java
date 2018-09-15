@@ -15,7 +15,7 @@ import java.util.List;
 
 public class StrategiBulutangkis extends AppCompatActivity implements OnPageChangeListener,OnLoadCompleteListener {
     private static final String TAG = StrategiBulutangkis.class.getSimpleName();
-    public static final String SAMPLE_FILE = "strategibulutangkis.pdf";
+    public static final String SAMPLE_FILE = "Strategi_dan_Taktik_Bermain_Bulutangkis.pdf";
     PDFView pdfView;
     Integer pageNumber = 0;
     String pdfFileName;

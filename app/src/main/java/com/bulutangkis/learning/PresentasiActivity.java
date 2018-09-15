@@ -19,12 +19,16 @@ import com.bulutangkis.learning.materi.PerwasitanBulutangkis;
 import com.bulutangkis.learning.materi.Presentasi01;
 import com.bulutangkis.learning.materi.Presentasi02;
 import com.bulutangkis.learning.materi.Presentasi03;
+import com.bulutangkis.learning.materi.Presentasi04;
+import com.bulutangkis.learning.materi.Presentasi05;
+import com.bulutangkis.learning.materi.Presentasi06;
+import com.bulutangkis.learning.materi.Presentasi07;
+import com.bulutangkis.learning.materi.Presentasi08;
 import com.bulutangkis.learning.materi.SejarahBulutangkis;
 import com.bulutangkis.learning.materi.StrategiBulutangkis;
 import com.bulutangkis.learning.materi.TeknikServiceBulutangkis;
 import com.bulutangkis.learning.model.MateriModel;
 import com.bulutangkis.learning.model.PresentasiModel;
-import com.itsrts.pptviewer.PPTViewer;
 
 import java.util.List;
 
@@ -105,6 +109,16 @@ public class PresentasiActivity extends AppCompatActivity {
                     startActivity(new Intent(PresentasiActivity.this, Presentasi02.class));
                 }else if (getPosition() == 2) {
                     startActivity(new Intent(PresentasiActivity.this, Presentasi03.class));
+                }else if (getPosition() == 3) {
+                    startActivity(new Intent(PresentasiActivity.this, Presentasi04.class));
+                }else if (getPosition() == 4) {
+                    startActivity(new Intent(PresentasiActivity.this, Presentasi05.class));
+                }else if (getPosition() == 5) {
+                    startActivity(new Intent(PresentasiActivity.this, Presentasi06.class));
+                }else if (getPosition() == 6) {
+                    startActivity(new Intent(PresentasiActivity.this, Presentasi07.class));
+                }else if (getPosition() == 7) {
+                    startActivity(new Intent(PresentasiActivity.this, Presentasi08.class));
                 }
             }
         }

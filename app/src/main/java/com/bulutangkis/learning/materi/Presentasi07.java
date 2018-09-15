@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Presentasi07 extends AppCompatActivity implements OnPageChangeListener,OnLoadCompleteListener {
     private static final String TAG = PeraturanBulutangkis.class.getSimpleName();
-    public static final String SAMPLE_FILE = "Pukulan_Siaga.pdf";
+    public static final String SAMPLE_FILE = "Pukulan_Servis.pdf";
     PDFView pdfView;
     Integer pageNumber = 0;
     String pdfFileName;

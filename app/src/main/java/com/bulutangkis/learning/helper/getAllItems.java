@@ -44,15 +44,14 @@ public class getAllItems {
     public static List<PresentasiModel> getPresentasi() {
 
         List<PresentasiModel> allItems = new ArrayList<PresentasiModel>();
-        allItems.add(new PresentasiModel("Net Drop", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Pukulan Backhand", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Pukulan dari bawah (Underhand)", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Pukulan mendatar (drive)", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Pukulan Service", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Pukulan dari Overhead ", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Sikap Siaga", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Pukulan Backhand", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Pukulan dari bawah (Underhand)", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Net Drop", R.drawable.ppt)); //1
+        allItems.add(new PresentasiModel("Pukulan Backhand", R.drawable.ppt)); //2
+        allItems.add(new PresentasiModel("Pukulan dari bawah (Underhand)", R.drawable.ppt)); //3
+        allItems.add(new PresentasiModel("Pukulan Mendatar (Drive)", R.drawable.ppt)); //4
+        allItems.add(new PresentasiModel("Pukulan Overhead Forehand", R.drawable.ppt)); //5
+        allItems.add(new PresentasiModel("Sikap Siaga", R.drawable.ppt)); //6
+        allItems.add(new PresentasiModel("Pukulan Servis", R.drawable.ppt)); //7
+        allItems.add(new PresentasiModel("Teknik Pegang Raket Grip", R.drawable.ppt)); //8
 
         return allItems;
     }

@@ -117,32 +117,35 @@
             android:parentActivityName=".MateriActivity"/>
         <activity
             android:name=".materi.Presentasi01"
-            android:label="Sikap Siaga"
+            android:label="Net Drop"
             android:parentActivityName=".PresentasiActivity" />
         <activity
             android:name=".materi.Presentasi02"
-            android:label="Sikap Siaga"
+            android:label="Pukulan Backhand"
             android:parentActivityName=".PresentasiActivity" />
         <activity
             android:name=".materi.Presentasi03"
-            android:label="Sikap Siaga"
+            android:label="Pukulan dari bawah (Underhand)"
             android:parentActivityName=".PresentasiActivity" />
-
         <activity
             android:name=".materi.Presentasi04"
-            android:label="Sikap Siaga"
+            android:label="Pukulan Mendatar (Drive)"
             android:parentActivityName=".PresentasiActivity" />
         <activity
             android:name=".materi.Presentasi05"
-            android:label="Sikap Siaga"
+            android:label="Pukulan Overhead Forehand"
             android:parentActivityName=".PresentasiActivity" />
         <activity
             android:name=".materi.Presentasi06"
             android:label="Sikap Siaga"
             android:parentActivityName=".PresentasiActivity" />
         <activity
+            android:name=".materi.Presentasi07"
+            android:label="Pukulan Servis"
+            android:parentActivityName=".PresentasiActivity" />
+        <activity
             android:name=".materi.Presentasi08"
-            android:label="Sikap Siaga"
+            android:label="Teknik Pegang Raket Grip"
             android:parentActivityName=".PresentasiActivity" />
     </application>
 
