@@ -28,7 +28,8 @@
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".MainActivity"
-            android:label="Dashboard" />
+            android:label="Dashboard"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MateriActivity"
             android:label="Materi"
@@ -114,19 +115,33 @@
             android:name=".PresentasiActivity"
             android:label="Presentasi"
             android:parentActivityName=".MateriActivity"/>
-
         <activity
             android:name=".materi.Presentasi01"
             android:label="Sikap Siaga"
             android:parentActivityName=".PresentasiActivity" />
-
         <activity
             android:name=".materi.Presentasi02"
             android:label="Sikap Siaga"
             android:parentActivityName=".PresentasiActivity" />
-
         <activity
             android:name=".materi.Presentasi03"
+            android:label="Sikap Siaga"
+            android:parentActivityName=".PresentasiActivity" />
+
+        <activity
+            android:name=".materi.Presentasi04"
+            android:label="Sikap Siaga"
+            android:parentActivityName=".PresentasiActivity" />
+        <activity
+            android:name=".materi.Presentasi05"
+            android:label="Sikap Siaga"
+            android:parentActivityName=".PresentasiActivity" />
+        <activity
+            android:name=".materi.Presentasi06"
+            android:label="Sikap Siaga"
+            android:parentActivityName=".PresentasiActivity" />
+        <activity
+            android:name=".materi.Presentasi08"
             android:label="Sikap Siaga"
             android:parentActivityName=".PresentasiActivity" />
     </application>

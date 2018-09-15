@@ -1,7 +1,11 @@
 package com.bulutangkis.learning.about;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -35,6 +39,21 @@ public class IdentitasActivity extends AppCompatActivity {
 
         ProfilAdapter adapter = new ProfilAdapter(rowListItem, IdentitasActivity.this);
         rView.setAdapter(adapter);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_email);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent email = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto","vjivandro77@gmail.com", null
+                ));
+                email.putExtra(Intent.EXTRA_SUBJECT, "Judul Email");
+                startActivity(Intent.createChooser(email, "Send email..."));
+
+                Snackbar.make(view, "Kirim Email", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
     }
 

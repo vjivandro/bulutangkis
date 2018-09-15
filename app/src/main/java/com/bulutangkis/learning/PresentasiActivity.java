@@ -18,6 +18,7 @@ import com.bulutangkis.learning.materi.PeraturanBulutangkis;
 import com.bulutangkis.learning.materi.PerwasitanBulutangkis;
 import com.bulutangkis.learning.materi.Presentasi01;
 import com.bulutangkis.learning.materi.Presentasi02;
+import com.bulutangkis.learning.materi.Presentasi03;
 import com.bulutangkis.learning.materi.SejarahBulutangkis;
 import com.bulutangkis.learning.materi.StrategiBulutangkis;
 import com.bulutangkis.learning.materi.TeknikServiceBulutangkis;
@@ -103,7 +104,7 @@ public class PresentasiActivity extends AppCompatActivity {
                 } else if (getPosition() == 1) {
                     startActivity(new Intent(PresentasiActivity.this, Presentasi02.class));
                 }else if (getPosition() == 2) {
-                    startActivity(new Intent(PresentasiActivity.this, Presentasi02.class));
+                    startActivity(new Intent(PresentasiActivity.this, Presentasi03.class));
                 }
             }
         }

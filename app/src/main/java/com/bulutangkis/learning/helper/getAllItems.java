@@ -22,7 +22,7 @@ public class getAllItems {
         List<DashBoardModel> allItems = new ArrayList<DashBoardModel>();
         allItems.add(new DashBoardModel("Materi", R.drawable.ic_materi));
         allItems.add(new DashBoardModel("Presentasi", R.drawable.ic_ppt));
-        allItems.add(new DashBoardModel("Test", R.drawable.ic_test));
+        allItems.add(new DashBoardModel("Latihan", R.drawable.ic_test));
         allItems.add(new DashBoardModel("Video Tutorial", R.drawable.ic_video));
 
         return allItems;
@@ -36,7 +36,7 @@ public class getAllItems {
         allItems.add(new MateriModel("Peraturan Permainan Bulutangkis", R.drawable.pdf));
         allItems.add(new MateriModel("Perwasitan Bulutangkis", R.drawable.pdf));
         allItems.add(new MateriModel("Strategi dan Taktik Bermain Bulutangkis", R.drawable.pdf));
-        allItems.add(new MateriModel("Teknik Service dalam Permainan Bulutangkis", R.drawable.pdf));
+        allItems.add(new MateriModel("Teknik Pukulan", R.drawable.pdf));
 
         return allItems;
     }
@@ -44,9 +44,15 @@ public class getAllItems {
     public static List<PresentasiModel> getPresentasi() {
 
         List<PresentasiModel> allItems = new ArrayList<PresentasiModel>();
+        allItems.add(new PresentasiModel("Net Drop", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Pukulan Backhand", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Pukulan dari bawah (Underhand)", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Pukulan mendatar (drive)", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Pukulan Service", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Pukulan dari Overhead ", R.drawable.ppt));
         allItems.add(new PresentasiModel("Sikap Siaga", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Teknik Dasar Langkah Kaki", R.drawable.ppt));
-        allItems.add(new PresentasiModel("Teknik Pegang Raket Grip", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Pukulan Backhand", R.drawable.ppt));
+        allItems.add(new PresentasiModel("Pukulan dari bawah (Underhand)", R.drawable.ppt));
 
         return allItems;
     }
@@ -61,22 +67,16 @@ public class getAllItems {
     // about
     public static List<ProfilModel> getProfileItemList() {
         List<ProfilModel> allItems = new ArrayList<ProfilModel>();
-//        allItems.add(new ProfilModel(R.drawable.ic_phone, "0341 - 460975"));
-//        allItems.add(new ProfilModel(R.drawable.ic_accessibility, "Laki -Laki"));
-//        allItems.add(new ProfilModel(R.drawable.ic_portrait, "130809383"));
-//        allItems.add(new ProfilModel(R.drawable.ic_work, "Fakultas Ilmu Pendidikan"));
-//        allItems.add(new ProfilModel(R.drawable.ic_account_balance, "Universitas Negeri Malang"));
-//        allItems.add(new ProfilModel(R.drawable.ic_assignment_ind, "Dosen FIP"));
-//        allItems.add(new ProfilModel(R.drawable.ic_event_seat, "Lektor Kepala"));
 
         allItems.add(new ProfilModel(R.drawable.ic_account_circle, "Identitas"));
         allItems.add(new ProfilModel(R.drawable.ic_account_balance, "Pendidikan"));
         allItems.add(new ProfilModel(R.drawable.ic_work, "Riwayat Pekerjaan"));
         allItems.add(new ProfilModel(R.drawable.ic_timeline, " Riwayat Jabatan, Pangkat, Golongan"));
         allItems.add(new ProfilModel(R.drawable.ic_branding_watermark, "Sertifikat"));
-        allItems.add(new ProfilModel(R.drawable.ic_language, "Fakultas Ilmu Pendidikan"));
+        allItems.add(new ProfilModel(R.drawable.ic_web, "Fakultas Ilmu Keolahragaan"));
         allItems.add(new ProfilModel(R.drawable.ic_language_green, "Universitas Negeri Malang"));
         allItems.add(new ProfilModel(R.drawable.ic_info, "Informasi"));
+        allItems.add(new ProfilModel(R.drawable.ic_extension, "Editor"));
         allItems.add(new ProfilModel(R.drawable.ic_android, "Mobile Developer"));
 
         return allItems;
@@ -88,9 +88,9 @@ public class getAllItems {
         allItems.add(new ProfilModel(R.drawable.ic_phone, "0341 - 460975"));
         allItems.add(new ProfilModel(R.drawable.ic_accessibility, "Laki -Laki"));
         allItems.add(new ProfilModel(R.drawable.ic_portrait, "130809383"));
-        allItems.add(new ProfilModel(R.drawable.ic_work, "Fakultas Ilmu Pendidikan"));
+        allItems.add(new ProfilModel(R.drawable.ic_work, "Fakultas Ilmu Keolahragaan"));
         allItems.add(new ProfilModel(R.drawable.ic_account_balance, "Universitas Negeri Malang"));
-        allItems.add(new ProfilModel(R.drawable.ic_assignment_ind, "Dosen FIP"));
+        allItems.add(new ProfilModel(R.drawable.ic_assignment_ind, "Dosen FIK"));
         allItems.add(new ProfilModel(R.drawable.ic_event_seat, "Lektor Kepala"));
 
         return allItems;

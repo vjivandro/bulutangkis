@@ -110,6 +110,18 @@ public class AboutActivity extends AppCompatActivity {
                     startActivity(new Intent(itemView.getContext(), InformasiActivity.class));
                 } else if (getPosition() == 8) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(AboutActivity.this);
+                    builder.setTitle("Editor");
+                    builder.setIcon(R.drawable.ic_android);
+                    builder.setMessage("Ahmad Yunan Ari Fadlila\nyunan.fadlila@gmail.com");
+                    builder.setPositiveButton("Oke", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            //getActivity().finish();
+                        }
+                    });
+                    builder.show();
+                } else if (getPosition() == 9) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(AboutActivity.this);
                     builder.setTitle("Mobile Developer");
                     builder.setIcon(R.drawable.ic_android);
                     builder.setMessage("Juris Vassa Ivandro, S.Kom\n082143594666\nvjivandro77@gmail.com");

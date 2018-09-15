@@ -13,9 +13,9 @@ import com.shockwave.pdfium.PdfDocument;
 
 import java.util.List;
 
-public class Presentasi01 extends AppCompatActivity implements OnPageChangeListener,OnLoadCompleteListener {
+public class Presentasi08 extends AppCompatActivity implements OnPageChangeListener,OnLoadCompleteListener {
     private static final String TAG = PeraturanBulutangkis.class.getSimpleName();
-    public static final String SAMPLE_FILE = "Net_Drop.pdf";
+    public static final String SAMPLE_FILE = "Teknik_Pegang_Raket_grip.pdf";
     PDFView pdfView;
     Integer pageNumber = 0;
     String pdfFileName;
@@ -70,3 +70,4 @@ public class Presentasi01 extends AppCompatActivity implements OnPageChangeListe
         }
     }
 }
+
