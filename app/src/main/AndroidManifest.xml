@@ -147,6 +147,10 @@
             android:name=".materi.Presentasi08"
             android:label="Teknik Pegang Raket Grip"
             android:parentActivityName=".PresentasiActivity" />
+        <activity
+            android:name=".materi.Presentasi09"
+            android:label="Servis_Judges"
+            android:parentActivityName=".PresentasiActivity" />
     </application>
 
 </manifest>

@@ -52,6 +52,7 @@ public class getAllItems {
         allItems.add(new PresentasiModel("Sikap Siaga", R.drawable.ppt)); //6
         allItems.add(new PresentasiModel("Pukulan Servis", R.drawable.ppt)); //7
         allItems.add(new PresentasiModel("Teknik Pegang Raket Grip", R.drawable.ppt)); //8
+        allItems.add(new PresentasiModel("Servis Judges", R.drawable.ppt)); //9
 
         return allItems;
     }
