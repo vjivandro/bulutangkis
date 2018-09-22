@@ -25,6 +25,7 @@ import com.bulutangkis.learning.materi.Presentasi06;
 import com.bulutangkis.learning.materi.Presentasi07;
 import com.bulutangkis.learning.materi.Presentasi08;
 import com.bulutangkis.learning.materi.Presentasi09;
+import com.bulutangkis.learning.materi.Presentasi10;
 import com.bulutangkis.learning.materi.SejarahBulutangkis;
 import com.bulutangkis.learning.materi.StrategiBulutangkis;
 import com.bulutangkis.learning.materi.TeknikServiceBulutangkis;
@@ -122,6 +123,8 @@ public class PresentasiActivity extends AppCompatActivity {
                     startActivity(new Intent(PresentasiActivity.this, Presentasi08.class));
                 }else if (getPosition() == 8) {
                     startActivity(new Intent(PresentasiActivity.this, Presentasi09.class));
+                }else if (getPosition() == 9) {
+                    startActivity(new Intent(PresentasiActivity.this, Presentasi10.class));
                 }
             }
         }

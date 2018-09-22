@@ -86,7 +86,7 @@
             android:parentActivityName=".about.AboutActivity" />
         <activity
             android:name=".about.FipWebviewActivity"
-            android:label="Fakultas Ilmu Pendidikan"
+            android:label="Fakultas Ilmu Keolahragaan"
             android:parentActivityName=".about.AboutActivity" />
         <activity
             android:name=".about.UMWebviewActivity"
@@ -150,6 +150,10 @@
         <activity
             android:name=".materi.Presentasi09"
             android:label="Servis_Judges"
+            android:parentActivityName=".PresentasiActivity" />
+        <activity
+            android:name=".materi.Presentasi10"
+            android:label="Teknik Dasar Langkah Kaki"
             android:parentActivityName=".PresentasiActivity" />
     </application>
 
